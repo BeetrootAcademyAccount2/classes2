@@ -4,13 +4,18 @@
 class Rect {
   constructor(height, width) {
     console.log("Enter the constructor");
-    this.height = height;
-    this.width = width;
+    this._height = height;
+    this._width = width;
+    this._color = "red";
   }
 
-  calcArea(height, width) {
+  get height() {
+    return this._height;
+  }
+
+  calcArea() {
     console.log("Calculating");
-    return height * width;
+    return this._height * this._width;
   }
 
   static info() {
@@ -20,10 +25,12 @@ class Rect {
 
 const rect1 = new Rect(2, 3);
 
-// console.log(rect1.calcArea(5, 5));
+console.log(rect1.calcArea(5, 5));
 // console.log(Rect.calcArea(5, 5));
 
 class Operation {
+  static pi = 3.14;
+
   static sumOfTwoNumbers(a, b) {
     return a + b;
   }
@@ -33,5 +40,5 @@ class Operation {
   }
 }
 
-console.log(Operation.sumOfTwoNumbers(2, 3));
-console.log(Operation.multipleThreeNumbers(2, 3, 4));
+// console.log(Operation.sumOfTwoNumbers(2, 3));
+// console.log(Operation.multipleThreeNumbers(2, 3, 4));
